@@ -123,13 +123,13 @@ Developed by [Emily Liu](https://github.com/yyliu11)
 
 ![Questions & Answers Add Answer component screenshot](docs/img/qa-modal.png)
 
-The Q&A provides the questions and answers posted by users and sellers. 
+The Q&A displays questions and answers posted by users and sellers. 
 
-All questions and answers are sorted by usefulness that is voted by users while the answers from sellers are listed on the top. 
+All questions and answers are sorted by usefulness voted by users while the answers from sellers are listed on the top. 
 
 The Live Search enables searching questions real time. 
 
-The inline models also allow user to submit questions and post answers to the existing questions. Meanwhile, the form authentication feature in the modal prevents dummy data from being sent to the API. 
+The inline modals allow users to submit questions and post answers to the existing questions. With a form authentication feature, the modal prevents dummy data from being sent to the API. 
 
 ### [Ratings & Reviews](client/src/components/Ratings/)
 
