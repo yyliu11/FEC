@@ -5,7 +5,7 @@ const questionList = {
         "question_body": "Why is this product cheaper here than other sites?",
         "question_date": "2018-10-18T00:00:00.000Z",
         "asker_name": "williamsmith",
-        "question_helpfulness": 4,
+        "question_helpfulness": 5,
         "reported": false,
         "answers": {
           68: {
@@ -13,25 +13,34 @@ const questionList = {
             "body": "We are selling it here without any markup from the middleman!",
             "date": "2018-08-18T00:00:00.000Z",
             "answerer_name": "Seller",
-            "helpfulness": 4,
+            "helpfulness": 8,
             "photos": []
             // ...
           },
           69: {
             "id": 69,
-            "body": "We are selling it here without any markup from the middleman!",
+            "body": "The price has been fluctuating",
             "date": "2018-08-18T00:00:00.000Z",
-            "answerer_name": "Seller",
-            "helpfulness": 4,
+            "answerer_name": "Jonathan",
+            "helpfulness": 3,
             "photos": []
             // ...
           },
           70: {
             "id": 70,
-            "body": "We are selling it here without any markup from the middleman!",
+            "body": "Not sure",
+            "date": "2018-08-18T00:00:00.000Z",
+            "answerer_name": "Fishbone",
+            "helpfulness": 1,
+            "photos": []
+            // ...
+          },
+          71: {
+            "id": 71,
+            "body": "We'd be happy to answer if you have more questions about our price",
             "date": "2018-08-18T00:00:00.000Z",
             "answerer_name": "Seller",
-            "helpfulness": 4,
+            "helpfulness": 2,
             "photos": []
             // ...
           }
@@ -39,17 +48,17 @@ const questionList = {
       },
       {
         "question_id": 38,
-        "question_body": "Why is this product cheaper here than other sites?",
+        "question_body": "How's the durability?",
         "question_date": "2018-10-18T00:00:00.000Z",
-        "asker_name": "williamsmith",
-        "question_helpfulness": 4,
+        "asker_name": "Jacob",
+        "question_helpfulness": 5,
         "reported": false,
         "answers": {
           68: {
             "id": 68,
-            "body": "We are selling it here without any markup from the middleman!",
+            "body": "The quality is pretty good",
             "date": "2018-08-18T00:00:00.000Z",
-            "answerer_name": "Seller",
+            "answerer_name": "Sandy",
             "helpfulness": 4,
             "photos": []
             // ...
@@ -58,18 +67,18 @@ const questionList = {
       },
       {
         "question_id": 39,
-        "question_body": "Why is this product cheaper here than other sites?",
+        "question_body": "Do they often have promotion?",
         "question_date": "2018-10-18T00:00:00.000Z",
-        "asker_name": "williamsmith",
-        "question_helpfulness": 4,
+        "asker_name": "Cantherine",
+        "question_helpfulness": 2,
         "reported": false,
         "answers": {
           68: {
             "id": 68,
-            "body": "We are selling it here without any markup from the middleman!",
+            "body": "We run promotion seasonally",
             "date": "2018-08-18T00:00:00.000Z",
             "answerer_name": "Seller",
-            "helpfulness": 4,
+            "helpfulness": 5,
             "photos": []
             // ...
           }
@@ -77,18 +86,18 @@ const questionList = {
       },
       {
         "question_id": 41,
-        "question_body": "Why is this product cheaper here than other sites?",
+        "question_body": "Will white be back in stock soon?",
         "question_date": "2018-10-18T00:00:00.000Z",
-        "asker_name": "williamsmith",
-        "question_helpfulness": 4,
+        "asker_name": "wanttobuy",
+        "question_helpfulness": 1,
         "reported": false,
         "answers": {
           68: {
             "id": 68,
-            "body": "We are selling it here without any markup from the middleman!",
+            "body": "It's been out of stock for a while",
             "date": "2018-08-18T00:00:00.000Z",
-            "answerer_name": "Seller",
-            "helpfulness": 4,
+            "answerer_name": "Mommybear",
+            "helpfulness": 3,
             "photos": []
             // ...
           }
@@ -107,7 +116,7 @@ const questionList = {
             "body": "Some of the seams started splitting the first time I wore it!",
             "date": "2019-11-28T00:00:00.000Z",
             "answerer_name": "sillyguy",
-            "helpfulness": 6,
+            "helpfulness": 10,
             "photos": [],
           },
           78: {
@@ -115,7 +124,7 @@ const questionList = {
             "body": "9 lives",
             "date": "2019-11-12T00:00:00.000Z",
             "answerer_name": "iluvdogz",
-            "helpfulness": 31,
+            "helpfulness": 3,
             "photos": [],
           },
           79: {
@@ -123,48 +132,81 @@ const questionList = {
             "body": "jncdjnvjkdfnv",
             "date": "2019-11-12T00:00:00.000Z",
             "answerer_name": "iluvdogz",
-            "helpfulness": 33,
+            "helpfulness": 0,
             "photos": [],
           }
         }
       },
-      // ...
+      {
+        "question_id": 41,
+        "question_body": "How long does it last?",
+        "question_date": "2019-06-28T00:00:00.000Z",
+        "asker_name": "funnygirl",
+        "question_helpfulness": 2,
+        "reported": false,
+        "answers": {
+          70: {
+            "id": 70,
+            "body": "Some of the seams started splitting the first time I wore it!",
+            "date": "2019-11-28T00:00:00.000Z",
+            "answerer_name": "sillyguy",
+            "helpfulness": 10,
+            "photos": [],
+          },
+          78: {
+            "id": 78,
+            "body": "9 lives",
+            "date": "2019-11-12T00:00:00.000Z",
+            "answerer_name": "iluvdogz",
+            "helpfulness": 3,
+            "photos": [],
+          },
+          79: {
+            "id": 79,
+            "body": "jncdjnvjkdfnv",
+            "date": "2019-11-12T00:00:00.000Z",
+            "answerer_name": "iluvdogz",
+            "helpfulness": 0,
+            "photos": [],
+          }
+        }
+      },
+      {
+        "question_id": 42,
+        "question_body": "How long does it last?",
+        "question_date": "2019-06-28T00:00:00.000Z",
+        "asker_name": "funnygirl",
+        "question_helpfulness": 2,
+        "reported": false,
+        "answers": {
+          70: {
+            "id": 70,
+            "body": "Some of the seams started splitting the first time I wore it!",
+            "date": "2019-11-28T00:00:00.000Z",
+            "answerer_name": "sillyguy",
+            "helpfulness": 10,
+            "photos": [],
+          },
+          78: {
+            "id": 78,
+            "body": "9 lives",
+            "date": "2019-11-12T00:00:00.000Z",
+            "answerer_name": "iluvdogz",
+            "helpfulness": 3,
+            "photos": [],
+          },
+          79: {
+            "id": 79,
+            "body": "jncdjnvjkdfnv",
+            "date": "2019-11-12T00:00:00.000Z",
+            "answerer_name": "iluvdogz",
+            "helpfulness": 0,
+            "photos": [],
+          }
+        }
+      },
   ]
 };
 
-const answerList = {
-  "question": "1",
-  "page": 0,
-  "count": 5,
-  "results": [
-    {
-      "answer_id": 8,
-      "body": "What a great question!",
-      "date": "2018-01-04T00:00:00.000Z",
-      "answerer_name": "metslover",
-      "helpfulness": 8,
-      "photos": [],
-    },
-    {
-      "answer_id": 5,
-      "body": "Something pretty durable but I can't be sure",
-      "date": "2018-01-04T00:00:00.000Z",
-      "answerer_name": "metslover",
-      "helpfulness": 5,
-      "photos": [{
-          "id": 1,
-          "url": "urlplaceholder/answer_5_photo_number_1.jpg"
-        },
-        {
-          "id": 2,
-          "url": "urlplaceholder/answer_5_photo_number_2.jpg"
-        },
-        // ...
-      ]
-    },
-    // ...
-  ]
-};
-
-export {questionList, answerList};
+export {questionList};
 

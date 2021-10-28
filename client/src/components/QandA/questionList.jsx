@@ -1,6 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
 import Addanswer from './addAnswer.jsx';
-import ViewMoreAnswers from './viewMoreAnswers.jsx';
 import AnswerList from './answerList.jsx';
 import axios from 'axios';
 
@@ -18,64 +17,65 @@ const QuestionList = (props) => {
       moreAnswersBtn = <a className='see-more-answers-click' onClick={() => { toggleOpen(); toggleMoreAnswers();}}>
       &raquo;&nbsp;See more answers </a>
     }
-    if (isOpen===true) {
-      moreAnswersBtn = null;
-    }
 
-  let sortedAnswerList;
-  sortedAnswerList= Object.values(props.question.answers).sort(function(a, b) {
-    return b.helpfulness - a.helpfulness;
-   })
-
+  let sortedAnswerList = Object.values(props.question.answers);
+  let others = [];
+  let sellers = [];
    sortedAnswerList.forEach(answer => {
      if (answer.answerer_name === 'Seller') {
-       let index = sortedAnswerList.indexOf(answer);
-      sortedAnswerList.unshift(answer);
-      sortedAnswerList.splice(index + 1, 1);
+       sellers.push(answer);
+     }else{
+       others.push(answer)
      }
    })
+   others = others.sort(function(a, b) {
+    return b.helpfulness - a.helpfulness;
+   })
+   sellers = sellers.sort(function(a, b) {
+    return b.helpfulness - a.helpfulness;
+   })
+   sortedAnswerList = sellers.concat(others);
 
-   const helpUpdate = () => {
-     props.toggleUpdate();
-   };
+   if(seeMoreAnswers === false){
+     sortedAnswerList = sortedAnswerList.slice(0, 2);
+    }
 
   const handleUpdateQuestionHelpfulness = () => {
+    props.question.question_helpfulness++;
     axios
     .put(`http://localhost:3000/hr-rfp/qa/questions/${props.question.question_id}/helpful`)
     .then(res => {
-      props.toggleUpdate()
+      res.sendStatus(200)
     })
     .catch(err => console.log(err));
   };
 
   return (
-      <div key={'question'} className='question-head'><a><strong>Q:</strong></a>&nbsp;&nbsp;{props.question.question_body}
-      <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-      <a>Helpful?&nbsp;</a>
-      {questionHelpful ? <a>Yes({props.question.question_helpfulness})</a> :
-      <a href='url'
-        className='question-helpful-click'
-        onClick={(e) =>
-          { e.preventDefault(); handleUpdateQuestionHelpfulness(); setQuestionHelpful(true);}}>
-           Yes({props.question.question_helpfulness})
-      </a>}
-      <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-      <a href='url'
-        className='add-answer-click'
-        onClick={(e) => {
-          e.preventDefault(); setAddAnswerPopup(true)}}>Add answer
-      </a>
-      <Addanswer questionBody={props.question.question_body} questionId={props.question.question_id} trigger={addAnswerPopup} setTrigger={setAddAnswerPopup} helpUpdate={helpUpdate}>
-      </Addanswer>
-      {sortedAnswerList.slice(0, 2).map((answer,index) =>
-      <AnswerList key={index} answer={answer} helpUpdate={helpUpdate}/>
-      )}
-      {moreAnswersBtn}
-      {seeMoreAnswers===true ? <ViewMoreAnswers answers={sortedAnswerList} /> : null}
-      {seeMoreAnswers===true ? <a className='see-more-answers-collapse' onClick={() => {toggleMoreAnswers(); toggleOpen()}}>
-      &raquo;&nbsp;Collapse answers</a> : null}
+      <div key={'question'} className='question-head'><a>Q:</a>&nbsp;&nbsp;{props.question.question_body}
+        <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        <a>Helpful?&nbsp;</a>
+        {questionHelpful ? <a>Yes({props.question.question_helpfulness})</a> :
+        <a href='url'
+          className='question-helpful-click'
+          onClick={(e) =>
+            { e.preventDefault(); handleUpdateQuestionHelpfulness(); setQuestionHelpful(true);}}>
+            Yes({props.question.question_helpfulness})
+        </a>}
+        <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        <a href='url'
+          className='add-answer-click'
+          onClick={(e) => {
+            e.preventDefault(); setAddAnswerPopup(true)}}>Add answer
+        </a>
+        <Addanswer questionBody={props.question.question_body} questionId={props.question.question_id} toggleUpdate={props.toggleUpdate} trigger={addAnswerPopup} setTrigger={setAddAnswerPopup}>
+        </Addanswer>
+        {sortedAnswerList.map((answer,index) =>
+          <AnswerList key={index} answer={answer} />
+        )}
+        {isOpen === true ? null : moreAnswersBtn}
+        {seeMoreAnswers===true ? <a className='see-more-answers-collapse' onClick={() => {toggleMoreAnswers(); toggleOpen()}}>
+        &raquo;&nbsp;Collapse answers</a> : null}
       </div>
-
   )};
 
   export default QuestionList;
